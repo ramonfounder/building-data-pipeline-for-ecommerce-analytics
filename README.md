@@ -51,3 +51,65 @@
      - Deploy the PostgreSQL database and Nifi instance on the cloud.
      - Use cloud monitoring and management tools to ensure the system's reliability and performance.
    - **Deliverable:** A summary of the cloud services used, applications deployed, and any challenges faced.
+
+     
+
+#### File: `customer_purchases.csv`
+
+| CustomerID | OrderID | OrderDate  | ProductID | ProductName     | Quantity | Price | Total  |
+|------------|---------|------------|-----------|-----------------|----------|-------|--------|
+| 1001       | 5001    | 2024-01-01 | 101       | Widget A        | 2        | 20.00 | 40.00  |
+| 1002       | 5002    | 2024-01-02 | 102       | Gadget B        | 1        | 35.00 | 35.00  |
+| 1001       | 5003    | 2024-01-03 | 103       | Thingamajig C   | 3        | 15.00 | 45.00  |
+| 1003       | 5004    | 2024-01-04 | 101       | Widget A        | 1        | 20.00 | 20.00  |
+| 1004       | 5005    | 2024-01-05 | 104       | Doohickey D     | 5        | 12.00 | 60.00  |
+| 1002       | 5006    | 2024-01-06 | 105       | Contraption E   | 2        | 50.00 | 100.00 |
+| 1005       | 5007    | 2024-01-07 | 103       | Thingamajig C   | 1        | 15.00 | 15.00  |
+| 1001       | 5008    | 2024-01-08 | 102       | Gadget B        | 4        | 35.00 | 140.00 |
+| 1004       | 5009    | 2024-01-09 | 106       | Gizmo F         | 3        | 25.00 | 75.00  |
+| 1003       | 5010    | 2024-01-10 | 101       | Widget A        | 2        | 20.00 | 40.00  |
+
+#### Columns Description:
+- **CustomerID**: Unique identifier for the customer.
+- **OrderID**: Unique identifier for the order.
+- **OrderDate**: Date when the order was placed.
+- **ProductID**: Unique identifier for the product.
+- **ProductName**: Name of the product.
+- **Quantity**: Number of units purchased.
+- **Price**: Price per unit of the product.
+- **Total**: Total cost of the order (Quantity * Price).
+
+### Using the Dataset in the Challenge
+
+**1. Apache Nifi: Data Ingestion Pipeline**
+   - Create a flow to ingest `customer_purchases.csv` data.
+   - Clean and transform the data (e.g., convert `OrderDate` to a standard format).
+   - Store the transformed data in a staging PostgreSQL database.
+
+**2. Python Programming: Data Transformation and ETL**
+   - Write Python scripts to read data from the staging database.
+   - Perform data cleaning (e.g., handle missing values, ensure data types are consistent).
+   - Load the cleaned data into an analytics PostgreSQL database.
+
+**3. PySpark: Large-Scale Data Processing**
+   - Set up a PySpark environment.
+   - Write PySpark scripts to perform aggregations, such as:
+     - Total sales per product.
+     - Average purchase value per customer.
+   - Save the processed data back into the PostgreSQL analytics database.
+
+**4. PostgreSQL: Database Management and Query Optimization**
+   - Set up PostgreSQL databases for staging and analytics.
+   - Create tables and write optimized queries to retrieve and manipulate data.
+   - Perform query optimization to enhance performance.
+
+**5. DataLake Experience: Cloud Storage and Analysis**
+   - Create a Data Lake on a cloud platform (e.g., AWS S3, Azure Data Lake).
+   - Ingest raw data from `customer_purchases.csv` into the Data Lake.
+   - Perform queries on the Data Lake using cloud analytics tools.
+
+**6. Cloud Experience: Deploying and Managing Cloud Services**
+   - Set up cloud resources (e.g., EC2 instances, S3 buckets on AWS).
+   - Deploy PostgreSQL and Nifi instances on the cloud.
+   - Use cloud monitoring tools to ensure system reliability and performance.
+
